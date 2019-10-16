@@ -33,12 +33,10 @@ export default function SimpleContainer() {
     </AppBar>
        <Typography variant="h3"> Hello,
         </Typography> 
-        <Box p={2} bgcolor="background.paper">
-        </Box>
+        <br/>
         <Typography variant="h4" align='center'> Arshiya Farzeen Avaran
         </Typography>
-        <Box p={2} bgcolor="background.paper">
-        </Box>
+        <br/>
         <Grid container>
         <Grid item xs={12} align="center"> 
         <Button variant="contained"  color="default" className={classes.button}>Download Item Templates</Button>

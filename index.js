@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Second from './second';
+import First from './first';
 
-ReactDOM.render(<Second/>, document.querySelector('#root'));
+ReactDOM.render(<First/>, document.querySelector('#root'));
     
