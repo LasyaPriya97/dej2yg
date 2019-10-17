@@ -19,10 +19,10 @@ import Divider from '@material-ui/core/Divider';
 
 const ExpansionPanel = withStyles({
   root: {
-    border: '1px solid rgba(0, 0, 0, .125)',
+   border: '1px solid rgba(0, 0, 0, .125)',
     boxShadow: 'none',
     '&:not(:last-child)': {
-      borderBottom: 0,
+      borderBottom: 1,
     },
     '&:before': {
       display: 'none',
@@ -39,9 +39,9 @@ const ExpansionPanelSummary = withStyles({
     backgroundColor: 'rgba(0, 0, 0, .03)',
     borderBottom: '1px solid rgba(0, 0, 0, .125)',
     marginBottom: -1,
-    minHeight: 56,
+    minHeight: 25,
     '&$expanded': {
-      minHeight: 56,
+      minHeight: 25,
     },
   },
   content: {
@@ -56,6 +56,7 @@ const ExpansionPanelDetails = withStyles(theme => ({
   root: {
     padding: theme.spacing(2),
   },
+  expanded: {},
 }))(MuiExpansionPanelDetails);
 
 const options = ['Product Type 1', 'Product Type 2', 'Product Type 3'];
@@ -110,8 +111,13 @@ export default function SplitButton() {
 
   return (
     <div className={classes.root}>
-    <Grid container>
-      <Grid item xs={6} align="center">
+     <Grid container>
+     <Grid item xs={12} align="center">
+         <Typography variant="h3" color="initial"> Download Templates</Typography>
+         <br/>
+         <br/>
+      </Grid>
+       <Grid item xs={6} align="center">
         <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
           <Button onClick={handleClick}>{options[selectedIndex]}</Button>
           <Button
@@ -151,7 +157,8 @@ export default function SplitButton() {
           )}
         </Popper>
        </Grid>
-       <Grid xs={6} align="center">
+       
+       <Grid xs={12} sm={3} align="center">
        <ExpansionPanel square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <ExpansionPanelSummary aria-controls="panel1d-content" id="panel1d-header">
           <Typography>Template List</Typography>
@@ -166,8 +173,10 @@ export default function SplitButton() {
         </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
+       <br/>
+       <br/>
+       <br/>
       </Grid>
-        <br/><br/><br/>
         <Grid xs={6} align="center">
         <Button variant="contained" color="initial" className={classes.button}> Download</Button></Grid>
         <Grid xs={6} align="center">
