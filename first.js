@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -21,14 +20,12 @@ const useStyles = makeStyles(theme => ({
   }
   
 }));
-
-
 export default function SimpleContainer() {
   const classes = useStyles();
-  return (
+return (
     <div className={classes.root}>
     <AppBar position="static">
-    <Toolbar>
+    <Toolbar variant="dense">
     <Button color="inherit" className={classes.Toolbarbutton}>Signout</Button>
     </Toolbar>
     </AppBar>
@@ -40,7 +37,7 @@ export default function SimpleContainer() {
         <br/>
         <Grid container>
         <Grid item xs={12} align="center"> 
-        <Button variant="contained"  color="default" className={classes.button}  onClick={window.location.assign('./second.js')}>Download Item Templates</Button>
+        <Button variant="contained"  color="default" className={classes.button} >Download Item Templates</Button>
         <Button variant="contained"  color="default" className={classes.button}>upload</Button> 
         <Button variant="contained"  color="default" className={classes.button}>Status of Batches</Button>
         </Grid>
