@@ -27,7 +27,7 @@ export default function simpleContainer(){
     <RaisedButton
        containerElement='label' // <-- Just add me!
          label='My Label'>
-       <input type="file" accept=".csv"/>
+       <input type="file" />
       </RaisedButton>
       <br/>
        (please upload .csv file)

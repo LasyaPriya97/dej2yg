@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Third from './third';
+import Second from './second';
 
 
-ReactDOM.render(<Third/>, document.querySelector('#root'));
+ReactDOM.render(<Second/>, document.querySelector('#root'));
     
