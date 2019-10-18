@@ -6,21 +6,14 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import RaisedButton from '@material-ui/Button';
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-   Toolbarbutton:{
-    marginLeft: 'auto',
-  },
-  button:{
-    size:'medium',
-    margin :theme.spacing(1),
-  }
-  
-}));
-export default function SimpleContainer() {
+export default class First extends Component{
+ continue = e =>{
+  e.preventDefault();
+  this.props.nextStep(); 
+ }
+render() {
   const classes = useStyles();
 return (
     <div className={classes.root}>
@@ -45,3 +38,16 @@ return (
         </div>
     );
 }
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+   Toolbarbutton:{
+    marginLeft: 'auto',
+  },
+  button:{
+    size:'medium',
+    margin :theme.spacing(1),
+  }
+  }));

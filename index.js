@@ -1,7 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import First from './first';
+import render from 'react-dom';
+import { Welcome } from './Components/Welcome';
 
 
-ReactDOM.render(<First/>, document.querySelector('#root'));
+class App extends Component{
+  render() {
+    return (
+      <div className="App">
+      <Welcome/>
+      </div>
+    );
+  }
+}
+
+export default App;
+
     
