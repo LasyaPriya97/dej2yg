@@ -1,33 +1,59 @@
-import React, { Component } from 'react';
-import render from 'react-dom';
-import  First  from './First';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-export default class Welcome extends Component{
-  state={step:1}
-
-    nextStep = () =>{
-      const { step } =this.state;
-      this.setState({
-        step:step+1
-      });
-    }
-
-  render(){
-    const { step } = this.state;
-    switch(step){
-        case 1:
-           return(
-        <First 
-        nextStep={this.nextStep}/>
-           );
-         case 2:  
-         return <h1> Second </h1> ;
-         case 3:
-         return <h1> Third </h1>;
-  }
+export default function Sample() {
   return (
-    <div> <h1> Hello</h1>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">ab</Link>
+            </li>
+            <li>
+              <Link to="/second">Second</Link>
+            </li>
+            <li>
+              <Link to="/third">Third</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/first">
+            <First />
+          </Route>
+          <Route path="/second">
+            <Second />
+          </Route>
+          <Route path="/third">
+            <Third />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
-  }
 }
+
+function Home(){
+  return <h3> home</h3>;
+}
+
+function First(){
+  return <First/>;
+}
+
+function Second(){
+ return <Second/>;
+}
+
+function Third(){
+  return <third/>;
+}
+

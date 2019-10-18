@@ -8,13 +8,20 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import RaisedButton from '@material-ui/Button';
 
-export default class First extends Component{
- continue = e =>{
-  e.preventDefault();
-  this.props.nextStep(); 
- }
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+   Toolbarbutton:{
+    marginLeft: 'auto',
+  },
+  button:{
+    size:'medium',
+    margin :theme.spacing(1),
+  }
+  }));
  
-render() {
+export default function SimpleContainer() {
   const classes = useStyles();
 return (
     <div className={classes.root}>
@@ -39,16 +46,5 @@ return (
         </div>
     );
 }
-}
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-   Toolbarbutton:{
-    marginLeft: 'auto',
-  },
-  button:{
-    size:'medium',
-    margin :theme.spacing(1),
-  }
-  }));
+
+
