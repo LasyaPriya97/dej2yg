@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -13,6 +13,7 @@ export default class First extends Component{
   e.preventDefault();
   this.props.nextStep(); 
  }
+ 
 render() {
   const classes = useStyles();
 return (
@@ -38,7 +39,7 @@ return (
         </div>
     );
 }
-
+}
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,

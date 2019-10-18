@@ -1,18 +1,19 @@
-import React from 'react';
-import render from 'react-dom';
-import { Welcome } from './Components/Welcome';
+import React, { Component } from 'react';
+import { render }from 'react-dom';
+import { Welcome } from './Welcome';
 
 
-class App extends Component{
+ export default class App extends Component{
   render() {
     return (
-      <div className="App">
+      <div>
       <Welcome/>
       </div>
     );
   }
 }
 
-export default App;
+
+
 
     

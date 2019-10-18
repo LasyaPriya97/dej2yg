@@ -14,17 +14,19 @@ export default class Welcome extends Component{
 
   render(){
     const { step }=this.state;
-      switch(step){
+    switch(step){
         case 1:
            return(
-        <First
-           nextStep={this.nextStep}
-        />
+        <First/>
            );
          case 2:  
          return <h1> Second </h1> ;
          case 3:
          return <h1> Third </h1>;
   }
+  return (
+    <div> <h1> Hello</h1>
+    </div>
+  );
   }
 }
