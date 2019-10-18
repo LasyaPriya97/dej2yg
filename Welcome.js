@@ -1,5 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import First from './First';
+import Second from './Second';
+import Third from './Third';
 
 export default function Sample() {
   return (
@@ -11,7 +14,7 @@ export default function Sample() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">ab</Link>
+              <Link to="/first">First</Link>
             </li>
             <li>
               <Link to="/second">Second</Link>
