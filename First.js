@@ -7,6 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import RaisedButton from '@material-ui/Button';
+import Link from '@material-ui/core/Link';
+import Second from './Second';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -38,7 +40,9 @@ return (
         <br/>
         <Grid container>
         <Grid item xs={12} align="center"> 
+        <Link>
         <Button variant="contained"  color="default" className={classes.button} >Download Item Templates</Button>
+        </Link>
         <Button variant="contained"  color="default" className={classes.button}>upload</Button> 
         <Button variant="contained"  color="default" className={classes.button}>Status of Batches</Button>
         </Grid>
