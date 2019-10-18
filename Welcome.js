@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import render from 'react-dom';
-import First from './First';
+import  First  from './First';
 
 export default class Welcome extends Component{
   state={step:1}
@@ -13,11 +13,12 @@ export default class Welcome extends Component{
     }
 
   render(){
-    const { step }=this.state;
+    const { step } = this.state;
     switch(step){
         case 1:
            return(
-        <First/>
+        <First 
+        nextStep={this.nextStep}/>
            );
          case 2:  
          return <h1> Second </h1> ;
