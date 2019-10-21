@@ -40,10 +40,8 @@ return (
         <br/>
         <Grid container>
         <Grid item xs={12} align="center"> 
-        <Link>
-        <Button variant="contained"  color="default" className={classes.button} >Download Item Templates</Button>
-        </Link>
-        <Button variant="contained"  color="default" className={classes.button}>upload</Button> 
+       <Button variant="contained"  color="default" className={classes.button} >Download Item Templates</Button>
+        <Button variant="contained"  color="inherit" className={classes.button}>upload</Button> 
         <Button variant="contained"  color="default" className={classes.button}>Status of Batches</Button>
         </Grid>
         </Grid>

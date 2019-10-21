@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
-
+import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Switch, Route, Link, BrowserRouter } from "react-router-dom";
@@ -16,16 +16,18 @@ function App() {
           path="/"
           render={({ location }) => (
             <Fragment>
-        
+             <AppBar position="static">
               <Tabs value={location.pathname}>
-                <Tab label="Item One" component={Link} to="/" />
-                <Tab label="Item Two" component={Link} to="/second" />
+                <Tab label="Page One" component={Link} to="/" />
+                <Tab label="Page Two" component={Link} to="/second" />
                 <Tab
-                  label="Item Three"
+                  label="Page Three"
                    component={Link}
                   to="/four"
                 />
               </Tabs>
+              </AppBar>
+              <br/>
               <Switch>
                 <Route path="/second" render={() => <div><Second/></div>} />
                 <Route path="/four" render={() => <div><Four/></div>} />
