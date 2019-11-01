@@ -27,8 +27,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function simpleContainer(){
   const classes = useStyles();
-  const isButtonClicked =true;
-  const value= isButtonClicked == true?
   return (
       <div className={classes.root}>
         <AppBar position="static">
@@ -36,23 +34,26 @@ export default function simpleContainer(){
             <Typography variant="body1"> Hello,</Typography>
             <Typography
               variant="body1"
-               className={classes.Toolbarbutton}>
+              align="center"
+              className={classes.Toolbarbutton}
+            >
               Arshiya Farzeen Avaran
             </Typography>
-            <Button color="inherit" className={classes.Toolbarbutton} onClick = {isButtonClicked ? (
-              <div>
-       <Typography variant="body1">Please click <span>
-       <Link component="button" variant="body2">here</Link></span>to login
-       </Typography>
-       </div>
-            ):(
+            <Button color="inherit"  onClick={e => {
             <div>
-     <Grid container>
+            <Typography variant="body1">please click <span><Link component="button" variant="body2">here</Link></span>to Login</Typography></div>}}>
+              SignOut
+            </Button>
+          </Toolbar>
+        </AppBar>
+        <br />
+
+        <Grid container>
           <Grid item xs={12} align="center">
             <Button
               variant="contained"
               color="default"
-             className={classes.button}
+              className={classes.button}
             >
               Download Item Templates
             </Button>
@@ -66,20 +67,16 @@ export default function simpleContainer(){
             <Button
               variant="contained"
               color="default"
-             className={classes.button} 
+              className={classes.button}
             >
               Status of Batches
             </Button>
           </Grid>
         </Grid>
-        </div>  
-            )} >
-              SignOut
-            </Button>
-          </Toolbar>
-        </AppBar>
-        <br />
-        
       </div>
     );
-}
+  }
+
+
+  
+ 
