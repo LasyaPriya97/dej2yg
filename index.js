@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Six from './Six';
+import Three from './Three';
 
-ReactDOM.render(<Six/>, document.querySelector('#root'));
+ReactDOM.render(<Three/>, document.querySelector('#root'));

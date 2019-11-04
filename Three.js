@@ -8,72 +8,74 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import RaisedButton from "@material-ui/Button";
 import Link from "@material-ui/core/Link";
-import Second from "./Second";
+import Four from "./Four";
+
 
 const useStyles = makeStyles(theme => ({
-      root: {
-        flexGrow: 1
-      },
-      Toolbarbutton: {
-        marginLeft: "auto"
-      },
-      button: {
-        size: "medium",
-        margin: theme.spacing(1)
-      },
-      link: {
-        margin: theme.spacing(1)
-      }
-    }));
-
-   export default function simpleContainer() {
-    const classes = useStyles();
-    return (
-      <div className={classes.root}>
-        <AppBar position="static">
-          <Toolbar>
-            <Typography variant="body1"> Hello,</Typography>
-            <Typography
-              variant="body1"
-              align="center"
-              className={classes.Toolbarbutton}
-            >
-              Arshiya Farzeen Avaran
-            </Typography>
-            <Button color="inherit" className={classes.Toolbarbutton} >
-              SignOut
-            </Button>
-          </Toolbar>
-        </AppBar>
-        <br />
-
-        <Grid container>
-          <Grid item xs={12} align="center">
-            <Button
-              variant="contained"
-              color="default"
-              className={classes.button}
-            >
-              Download Item Templates
-            </Button>
-            <Button
-              variant="contained"
-              color="inherit"
-              className={classes.button}
-            >
-              upload
-            </Button>
-            <Button
-              variant="contained"
-              color="default"
-              className={classes.button}
-            >
-              Status of Batches
-            </Button>
-          </Grid>
-        </Grid>
-      </div>
-    );
+  root: {
+    flexGrow: 1
+  },
+  Toolbarbutton: {
+    marginLeft: "auto"
+  },
+  button: {
+    size: "medium",
+    margin: theme.spacing(1)
+  },
+  link: {
+    margin: theme.spacing(1)
   }
+}));
 
+export default function simpleContainer() {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="body1"> Hello,</Typography>
+          <Typography
+            variant="body1"
+            align="center"
+            className={classes.Toolbarbutton}
+          >
+            Arshiya Farzeen Avaran
+          </Typography>
+          <Button color="inherit" className={classes.Toolbarbutton} onClick={isDisplay()}>
+            Signout
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <br />
 
+      <Grid container>
+        <Grid item xs={12} align="center">
+          <Button
+            variant="contained"
+            color="default"
+            className={classes.button}
+          >
+            Download Item Templates
+          </Button>
+          <Button
+            variant="contained"
+            color="inherit"
+            className={classes.button}
+          >
+            upload
+          </Button>
+          <Button
+            variant="contained"
+            color="default"
+            className={classes.button}
+          >
+            Status of Batches
+          </Button>
+        </Grid>
+      </Grid>
+    </div>
+  );
+}
+function isDisplay(){
+  ReactDom.render(<Four/>,document.getElementById('root'));
+}
