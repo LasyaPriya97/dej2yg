@@ -4,12 +4,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import RaisedButton from "@material-ui/Button";
+import RaisedButton from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
+import { Redirect } from "react-router-dom";
 import Four from "./Four";
-
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,8 +40,10 @@ export default function simpleContainer() {
           >
             Arshiya Farzeen Avaran
           </Typography>
-          <Button color="inherit" className={classes.Toolbarbutton} onClick={isDisplay()}>
-            Signout
+          <Button
+            color="inherit"
+            className={classes.Toolbarbutton}>
+            SignOut
           </Button>
         </Toolbar>
       </AppBar>
@@ -75,7 +76,4 @@ export default function simpleContainer() {
       </Grid>
     </div>
   );
-}
-function isDisplay(){
-  ReactDom.render(<Four/>,document.getElementById('root'));
 }
