@@ -73,12 +73,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 export default function SplitButton() {
-  const [expanded, setExpanded] = React.useState("panel1");
-
-  const handleChange = panel => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
-  };
-
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);

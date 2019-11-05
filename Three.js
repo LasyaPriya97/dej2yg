@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import RaisedButton from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Four from "./Four";
 
 const useStyles = makeStyles(theme => ({
@@ -28,6 +28,10 @@ const useStyles = makeStyles(theme => ({
 
 export default function simpleContainer() {
   const classes = useStyles();
+   history = useHistory();
+  function handleClick(){
+    history.push("/Four");
+  }
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -40,11 +44,8 @@ export default function simpleContainer() {
           >
             Arshiya Farzeen Avaran
           </Typography>
-          <Button
-            color="inherit"
-            className={classes.Toolbarbutton}>
-            SignOut
-          </Button>
+          <Button color="inherit" className={classes.Toolbarbutton} 
+          onClick={handleClick} >Sign out</Button> 
         </Toolbar>
       </AppBar>
       <br />
@@ -77,3 +78,5 @@ export default function simpleContainer() {
     </div>
   );
 }
+
+  
