@@ -7,8 +7,8 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import RaisedButton from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
-import { Router } from "react-router";
-import Four from "./Four";
+import { Router } from "react-router-dom";
+import Six from "./Six";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,10 +25,15 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1)
   }
 }));
+const handleClick = () => {
+  console.log("props",this.props)
+  this.props.history.push("/Six")
+};
 
 export default function simpleContainer() {
   const classes = useStyles();
-return (
+
+  return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
@@ -36,16 +41,19 @@ return (
           <Typography
             variant="body1"
             align="center"
-            className={classes.Toolbarbutton}
-          >
+            className={classes.Toolbarbutton}>
             Arshiya Farzeen Avaran
           </Typography>
-          <Button color="inherit" className={classes.Toolbarbutton} 
-          onClick={this.history.push} >Sign out</Button> 
+          <Button
+            color="inherit"
+            className={classes.Toolbarbutton}
+            onClick={this.handleClick.bind(this)}
+          >
+            signout
+          </Button>
         </Toolbar>
-      </AppBar>
+      </Appbar>
       <br />
-
       <Grid container>
         <Grid item xs={12} align="center">
           <Button
@@ -73,7 +81,4 @@ return (
       </Grid>
     </div>
   );
-  history.push('\Four');
 }
-
-  
