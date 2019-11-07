@@ -106,7 +106,7 @@ export default function simpleContainer() {
           >
             <Button>{options[selectedIndex]}</Button>
             <Button
-              color="pr"
+              color="default"
               size="small"
               aria-controls={open ? "split-button-menu" : undefined}
               aria-expanded={open ? "true" : undefined}

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Link, Route } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
-import Seven from "./Seven";
 
 export default function simpleApp() {
   return (

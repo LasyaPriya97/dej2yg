@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Three from './Three';
+import Dropdown from './Dropdown'
 
-ReactDOM.render(<Three/>, document.querySelector('#root'));
+ReactDOM.render(<Dropdown/>, document.querySelector('#root'));
