@@ -32,10 +32,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1)
   }
 }));
-const handleClick = () => {
-  console.log("props", this.props);
-  this.props.history.push("Six");
-};
+
 
 export default function simpleContainer() {
   const classes = useStyles();
