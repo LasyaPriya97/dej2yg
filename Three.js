@@ -26,8 +26,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 const handleClick = () => {
-  console.log("props",this.props)
-  this.props.history.push("/Six")
+  console.log("props", this.props);
+  this.props.history.push("Six");
 };
 
 export default function simpleContainer() {
@@ -41,18 +41,15 @@ export default function simpleContainer() {
           <Typography
             variant="body1"
             align="center"
-            className={classes.Toolbarbutton}>
+            className={classes.Toolbarbutton}
+          >
             Arshiya Farzeen Avaran
           </Typography>
-          <Button
-            color="inherit"
-            className={classes.Toolbarbutton}
-            onClick={this.handleClick.bind(this)}
-          >
+          <Button color="inherit" className={classes.Toolbarbutton}>
             signout
           </Button>
         </Toolbar>
-      </Appbar>
+      </AppBar>
       <br />
       <Grid container>
         <Grid item xs={12} align="center">

@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Three from './Three';
+import Vendor from './Vendor';
 
-ReactDOM.render(<Three/>, document.querySelector('#root'));
+ReactDOM.render(<Vendor/>, document.querySelector('#root'));
