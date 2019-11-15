@@ -4,26 +4,28 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
+import DialogActions from '@material-ui/core/DialogActions'
 import InputLabel from '@material-ui/core/InputLabel';
+import Input from '@material-ui/core/Input';
 
 export default class AppComponent extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       data: [
-        { vendorName: "vendordata", vendorid: "1", vendornumber: "6779" },
-        { vendorName: "xyz", vendorid: "1", vendornumber: "6779" },
-        { vendorName: "xyz1", vendorid: "2", vendornumber: "6777" },
-        { vendorName: "xyz2", vendorid: "3", vendornumber: "6775" }
+        { vendorName: "vendordata", vendorId: "1", vendorNumber: "6779" },
+        { vendorName: "xyz", vendorId: "1", vendorNumber: "6779" },
+        { vendorName: "xyz1", vendorId: "2", vendorNumber: "6777" },
+        { vendorName: "xyz2", vendorId: "3", vendorNumber: "6775" }
       ],
-      open:false,
+      open : false,
       selected:''
     };
   }
-  handleOpen = event => {
+  handleOpen = () => {
     this.setState({open:true});
   }
-  handleClose = event => {
+  handleClose = () => {
     this.setState({open:false});
   }
   handleChange = event => {
@@ -36,22 +38,29 @@ export default class AppComponent extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
       <React.Fragment>
-      <Button color="primary" variant="outlined" onClick={this.handleOpen}>vendor list</Button>
-      <Dialog open={open} onClose={this.handleClose} onOpen={this.handleOpen}>
-      <DialogTitle id="VendorData-native-select">Select vendor</DialogTitle>
+      <Button color="primary" onClick={this.handleOpen}>vendor data</Button>
+      <Dialog open={open} onClose={this.handleClose}>
+      <DialogTitle>Select vendor</DialogTitle>
       <DialogContent>
-      <InputLabel html for="vendorData-native-select">vendorData</InputLabel>
+      <InputLabel htmlfor="vendorData-dialog-native">vendorData</InputLabel>
       <Select
       native
       value={this.state.selected}
-      onChange={this.handleChange}>
+      onChange={this.handleChange}
+      input = {<Input id="vendorData-dialog-native"/>}
+      >
         {this.state.data.map(e1 => (
           <option value={e1.vendorName}>{e1.vendorName}</option>
         ))}
       </Select>
-      <dialogContent>
+      </DialogContent>
+      <DialogActions>
+      <Button color="primary" onClick={this.handleClose}>cancel</Button>
+      <Button color="primary" onClick={this.handleClose}>ok</Button>
+      </DialogActions>
       </Dialog>
       </React.Fragment>
     );
