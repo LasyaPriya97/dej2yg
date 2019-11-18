@@ -85,14 +85,5 @@ export default function SplitButton() {
     </div>
   );
 }
-data = [
-    { name: "xyz", id: 1, number: 12344 },
-    { name: "xyz1", id: 2, number: 45678 },
-    { name: "xyz2", id: 3, number: 23456 }
-  ];
-   handleChange = event => {
-    this.setState({
-      value: event.target.value
-    });
-  };
+
   
