@@ -9,6 +9,17 @@ import DialogActions from "@material-ui/core/DialogActions";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
 
+const useStyles = makeStyles(theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+}));
+
 export default class AppComponent extends Component {
   constructor() {
     super();
@@ -33,11 +44,11 @@ export default class AppComponent extends Component {
   handleChange = event => {
     this.setState({ selected: event.target.value });
   };
-  /*componentDidMount() {
+  componentDidMount() {
     fetch(`https://jsonplaceholder.typicode.com/posts`)
       .then(response => response.json())
       .then(json => this.setState({ data: json }));
-  }*/
+  }
   render() {
     return (
       <React.Fragment>
