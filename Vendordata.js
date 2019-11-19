@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { withStyles,makeStyles } from "@material-ui/core/styles";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
@@ -8,8 +8,10 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
+import FormControl from "@material-ui/core/FormControl";
+import PropTypes from 'prop-types';
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -18,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     minWidth: 120,
   },
-}));
+});
 
 export default class AppComponent extends Component {
   constructor() {
@@ -44,18 +46,21 @@ export default class AppComponent extends Component {
   handleChange = event => {
     this.setState({ selected: event.target.value });
   };
-  componentDidMount() {
+  /*componentDidMount() {
     fetch(`https://jsonplaceholder.typicode.com/posts`)
       .then(response => response.json())
       .then(json => this.setState({ data: json }));
-  }
+  }*/
   render() {
-    return (
+    const  classes   = this.props; 
+     return (
       <React.Fragment>
        <Button color='primary' onclick={this.handleIsOpen}>VendorData</Button>
         <Dialog  open={open} onClose={this.handleIsClose}>
           <DialogTitle>Select vendor</DialogTitle>
           <DialogContent>
+          <form className={classes.container}>
+          <FormControl className={classes.formControl}>
             <InputLabel>vendorData</InputLabel>
             <Select
               native
@@ -67,6 +72,8 @@ export default class AppComponent extends Component {
                 <option value={e1.vendorName}>{e1.vendorName}</option>
               ))}
             </Select>
+            </FormControl>
+            </form>
           </DialogContent>
           <DialogActions>
             <Button color="primary" onClick={this.handleIsClose}>
@@ -81,3 +88,6 @@ export default class AppComponent extends Component {
     );
   }
 }
+AppComponent.propTypes = {
+  classes:PropTypes.object.isRequired,
+};
