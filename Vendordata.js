@@ -88,6 +88,6 @@ export default class AppComponent extends Component {
     );
   }
 }
-AppComponent.propTypes = {
+/*AppComponent.propTypes = {
   classes:PropTypes.object.isRequired,
-};
+};*/
